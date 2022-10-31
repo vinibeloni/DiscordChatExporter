@@ -12,7 +12,7 @@ internal class AggregateMatcher<T> : IMatcher<T>
     }
 
     public AggregateMatcher(params IMatcher<T>[] matchers)
-        : this((IReadOnlyList<IMatcher<T>>) matchers)
+        : this((IReadOnlyList<IMatcher<T>>)matchers)
     {
     }
 

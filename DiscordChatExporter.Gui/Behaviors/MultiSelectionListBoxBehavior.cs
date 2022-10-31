@@ -22,7 +22,7 @@ public class MultiSelectionListBoxBehavior<T> : Behavior<ListBox>
 
     private static void OnSelectedItemsChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
     {
-        var behavior = (MultiSelectionListBoxBehavior<T>) sender;
+        var behavior = (MultiSelectionListBoxBehavior<T>)sender;
         if (behavior._modelHandled) return;
 
         if (behavior.AssociatedObject is null)
@@ -38,7 +38,7 @@ public class MultiSelectionListBoxBehavior<T> : Behavior<ListBox>
 
     public IList? SelectedItems
     {
-        get => (IList?) GetValue(SelectedItemsProperty);
+        get => (IList?)GetValue(SelectedItemsProperty);
         set => SetValue(SelectedItemsProperty, value);
     }
 
@@ -79,7 +79,7 @@ public class MultiSelectionListBoxBehavior<T> : Behavior<ListBox>
         base.OnAttached();
 
         AssociatedObject.SelectionChanged += OnListBoxSelectionChanged;
-        ((INotifyCollectionChanged) AssociatedObject.Items).CollectionChanged += OnListBoxItemsChanged;
+        ((INotifyCollectionChanged)AssociatedObject.Items).CollectionChanged += OnListBoxItemsChanged;
     }
 
     /// <inheritdoc />
@@ -90,7 +90,7 @@ public class MultiSelectionListBoxBehavior<T> : Behavior<ListBox>
         if (AssociatedObject is not null)
         {
             AssociatedObject.SelectionChanged -= OnListBoxSelectionChanged;
-            ((INotifyCollectionChanged) AssociatedObject.Items).CollectionChanged -= OnListBoxItemsChanged;
+            ((INotifyCollectionChanged)AssociatedObject.Items).CollectionChanged -= OnListBoxItemsChanged;
         }
     }
 }

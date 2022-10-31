@@ -22,7 +22,7 @@ internal static class ConsoleExtensions
         .AutoRefresh(true)
         .HideCompleted(false)
         .Columns(
-            new TaskDescriptionColumn {Alignment = Justify.Left},
+            new TaskDescriptionColumn { Alignment = Justify.Left },
             new ProgressBarColumn(),
             new PercentageColumn()
         );
@@ -35,7 +35,7 @@ internal static class ConsoleExtensions
         var progressTask = progressContext.AddTask(
             // Don't recognize random square brackets as style tags
             Markup.Escape(description),
-            new ProgressTaskSettings {MaxValue = 1}
+            new ProgressTaskSettings { MaxValue = 1 }
         );
 
         try

@@ -6,7 +6,7 @@ namespace DiscordChatExporter.Core.Markdown.Parsing;
 
 internal abstract class MarkdownVisitor
 {
-    protected virtual ValueTask<MarkdownNode> VisitTextAsync(TextNode text) => 
+    protected virtual ValueTask<MarkdownNode> VisitTextAsync(TextNode text) =>
         new(text);
 
     protected virtual async ValueTask<MarkdownNode> VisitFormattingAsync(FormattingNode formatting)
@@ -15,10 +15,10 @@ internal abstract class MarkdownVisitor
         return formatting;
     }
 
-    protected virtual ValueTask<MarkdownNode> VisitInlineCodeBlockAsync(InlineCodeBlockNode inlineCodeBlock) => 
+    protected virtual ValueTask<MarkdownNode> VisitInlineCodeBlockAsync(InlineCodeBlockNode inlineCodeBlock) =>
         new(inlineCodeBlock);
 
-    protected virtual ValueTask<MarkdownNode> VisitMultiLineCodeBlockAsync(MultiLineCodeBlockNode multiLineCodeBlock) => 
+    protected virtual ValueTask<MarkdownNode> VisitMultiLineCodeBlockAsync(MultiLineCodeBlockNode multiLineCodeBlock) =>
         new(multiLineCodeBlock);
 
     protected virtual async ValueTask<MarkdownNode> VisitLinkAsync(LinkNode link)
@@ -27,13 +27,13 @@ internal abstract class MarkdownVisitor
         return link;
     }
 
-    protected virtual ValueTask<MarkdownNode> VisitEmojiAsync(EmojiNode emoji) => 
+    protected virtual ValueTask<MarkdownNode> VisitEmojiAsync(EmojiNode emoji) =>
         new(emoji);
 
-    protected virtual ValueTask<MarkdownNode> VisitMentionAsync(MentionNode mention) => 
+    protected virtual ValueTask<MarkdownNode> VisitMentionAsync(MentionNode mention) =>
         new(mention);
 
-    protected virtual ValueTask<MarkdownNode> VisitUnixTimestampAsync(UnixTimestampNode timestamp) => 
+    protected virtual ValueTask<MarkdownNode> VisitUnixTimestampAsync(UnixTimestampNode timestamp) =>
         new(timestamp);
 
     public async ValueTask<MarkdownNode> VisitAsync(MarkdownNode node) => node switch

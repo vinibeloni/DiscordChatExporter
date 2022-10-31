@@ -42,7 +42,7 @@ public partial class PartitionLimit
             return null;
         }
 
-        return (long) (number * magnitude);
+        return (long)(number * magnitude);
     }
 
     public static PartitionLimit? TryParse(string value, IFormatProvider? formatProvider = null)
